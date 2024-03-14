@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola Mundo con Vue 3</title>
+    <!-- Incluye Vue.js 3 desde CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+</head>
+<body>
+
+<!-- Contenedor de Vue -->
+<div id="app">
+    <!-- Mostrar el mensaje de Vue -->
+    {{ mensaje }}
+</div>
+
+<!-- Tu script de Vue -->
+<script>
+    // Instancia de Vue
+    const app = Vue.createApp({
+        data() {
+            return {
+                mensaje: 'Hola Mundo con Vue 3!'
+            };
+        }
+    });
+
+    // Montar la aplicación en un elemento existente (por ID)
+    app.mount('#app');
+</script>
+
+</body>
+</html>
