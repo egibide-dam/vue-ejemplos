@@ -9,10 +9,11 @@ const taller = 'Taller Arriaga';
 
 // ref envuelve el string en un objeto cuya principal propiedad es value
 let servicio1 = 'Basico';
-const servicio2 = ref('Especial');
+const servicio2 = ref('Mejorado');
 
 // Modificar el valor desde JavaScript
 servicio1 = 'Normal';
+servicio2.value = 'Especial';
 
 // --- reactive ---
 
@@ -20,7 +21,7 @@ servicio1 = 'Normal';
 const repuesto1 = reactive({
     id: 1,
     nombre: 'Filtro de aceite',
-    precio: 100,
+    precio: 150,
     disponibilidad: true
 });
 
@@ -42,39 +43,57 @@ const funcionEvaluarPrecio = () => {
 </script>
 
 <template>
-    <h1>{{ taller }}</h1>
-    <h3>Servicios disponibles</h3>
-    <dl>
-        <dt>Servicio 1</dt>
-        <dd>{{ servicio1 }}</dd>
-        <dt>Servicio 2</dt>
-        <dd>{{ servicio2 }}</dd>
-    </dl>
+    <div class="container pt-5">
+        <h1 class="display-1">{{ taller }}</h1>
 
-    <button @click="servicio1='Básico'">Modificar la categoría de S1</button>
-    <button @click="servicio2='Premiun'">Modificar la categoría de S2</button>
+        <h2>Servicios disponibles</h2>
+        <dl class="list-group">
+            <dt>Servicio 1</dt>
+            <dd>{{ servicio1 }}</dd>
+            <dt>Servicio 2</dt>
+            <dd>{{ servicio2 }}</dd>
+        </dl>
 
-    <h3>Repuestos</h3>
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Disponibilidad</th>
-            <th>Precio</th>
-            <th>Precio</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>{{ repuesto1.nombre }}</td>
-            <td>{{ repuesto1.disponibilidad }}</td>
-            <td>{{ evaluarPrecio }}</td>
-            <td>{{ funcionEvaluarPrecio() }}</td>
-        </tr>
-    </table>
+        <div>
+            <button class="btn btn-primary me-2" @click="servicio1='Básico'">
+                Modificar la categoría de S1
+            </button>
+            <button class="btn btn-primary" @click="servicio2='Premiun'">
+                Modificar la categoría de S2
+            </button>
+        </div>
 
-    <button @click="repuesto1.disponibilidad=false">Modificar la disponibilidad de R1</button>
-    <button @click="repuesto1.precio=150">Modificar el precio de R1</button>
+        <h2 class="mt-5">Repuestos</h2>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Disponibilidad</th>
+                <th>Precio</th>
+                <th>Precio</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>{{ repuesto1.nombre }}</td>
+                <td>{{ repuesto1.disponibilidad }}</td>
+                <td>{{ evaluarPrecio }}</td>
+                <td>{{ funcionEvaluarPrecio() }}</td>
+            </tr>
+            </tbody>
+        </table>
 
+        <div>
+            <button class="btn btn-primary me-2" @click="repuesto1.disponibilidad=true">
+                Modificar la disponibilidad de R1
+            </button>
+            <button class="btn btn-primary" @click="repuesto1.precio=100">
+                Modificar el precio de R1
+            </button>
+        </div>
+    </div>
 </template>
 
 <style scoped>
