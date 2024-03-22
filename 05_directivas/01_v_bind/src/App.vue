@@ -46,7 +46,8 @@ const estiloVerde = {
         </tr>
         </tbody>
     </table>
-    <div>
+
+    <div class="mt-5">
         <button class="btn btn-primary me-2" @click="producto.vendido=true">
             Vender el producto
         </button>
