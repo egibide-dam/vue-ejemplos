@@ -11,7 +11,10 @@ const producto = ref({
 </script>
 
 <template>
-    <h1>Producto</h1>
+    <h1>Ejemplo v-model</h1>
+    <hr class="mb-5">
+
+    <h2>Mostrar producto</h2>
     <table class="table border w-25">
         <tbody>
         <tr>
@@ -33,7 +36,7 @@ const producto = ref({
         </tbody>
     </table>
 
-    <h1 class="mt-5">Producto</h1>
+    <h2 class="mt-5">Editar producto</h2>
     <div class="card col-4 p-3">
         <div class="mb-3">
             <label class="form-label" for="nombre">Nombre</label>

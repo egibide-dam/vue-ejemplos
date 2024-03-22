@@ -5,6 +5,9 @@ const centro = ref(); // Propiedad reactiva inicialmente vacía.
 </script>
 
 <template>
+    <h1>Ejemplo v-if</h1>
+    <hr class="mb-5">
+
     <div class="row justify-content-center align-items-center">
         <div class="col-3">
             <label class="form-label" for="centro">Elige un centro</label>

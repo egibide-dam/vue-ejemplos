@@ -22,7 +22,10 @@ const estiloVerde = {
 </script>
 
 <template>
-    <h1>Producto</h1>
+    <h1>Ejemplo v-bind</h1>
+    <hr class="mb-5">
+
+    <h2>Producto</h2>
     <table class="table border w-25">
         <tbody>
         <tr>
