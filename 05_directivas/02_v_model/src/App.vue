@@ -34,7 +34,7 @@ const producto = ref({
     </table>
 
     <h1 class="mt-5">Producto</h1>
-    <div class="card p-3">
+    <div class="card col-4 p-3">
         <div class="mb-3">
             <label class="form-label" for="nombre">Nombre</label>
             <input class="form-control" id="nombre" type="text" v-model="producto.nombre"/>
