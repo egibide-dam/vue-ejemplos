@@ -1,6 +1,6 @@
 <script setup>
 // Dependiendo de cómo creemos las propiedades computadas usaremos un import u otro
-import {ref, reactive, computed} from "vue";
+import { ref, reactive, computed } from "vue";
 
 // Constante "normal"
 const taller = 'Taller Arriaga';
