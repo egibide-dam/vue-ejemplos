@@ -13,7 +13,7 @@ const frase = 'Este texto aparecerá en el slot.';
     <SubComponente>
         <!-- slot sin nombre -->
         <h2>Imagen</h2>
-        <img class="rounded" src="https://picsum.photos/200" alt="logo">
+        <img class="rounded" src="https://picsum.photos/200" alt="Imagen aleatoria">
 
         <!-- slot con nombre -->
         <template #mensaje>
@@ -25,4 +25,3 @@ const frase = 'Este texto aparecerá en el slot.';
 
 <style scoped>
 </style>
-
