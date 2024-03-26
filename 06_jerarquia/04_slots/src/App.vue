@@ -1,51 +1,28 @@
 <script setup>
-import { ref } from 'vue'
+import SubComponente from '@/components/SubComponente.vue';
 
-import MostrarTareas from "@/components/MostrarTareas.vue";
-import AgregarTareas from '@/components/AgregarTareas.vue'
-import SlotsComponent from '@/components/SlotsComponent.vue';
-
-const listaTareas = ref([
-    {
-        id: 1,
-        tarea: 'Ir al supermercado'
-    },
-    {
-        id: 2,
-        tarea: 'Bañar al perro'
-    }
-])
-
-const agregarTarea = (nuevaTarea) => {
-    listaTareas.value.push({
-        id: listaTareas.value.length + 1,
-        tarea: nuevaTarea
-    })
-}
-
-const frase = 'Muchas cosas por hacer';
-
+const frase = 'Este texto aparecerá en el slot.';
 </script>
 
 <template>
-    <h1>Ejemplo slots</h1>
+    <header>
+        <h1>Ejemplo slots</h1>
+        <hr class="mb-5">
+    </header>
 
-    <SlotsComponent>
+    <SubComponente>
         <!-- slot sin nombre -->
-        <h1>Gestor de tareas</h1>
-        <img src="https://lh3.ggpht.com/0jPniuR9EOLXUyYMFLlBKr0Jef_1SyHGsPkoLpDoNey1-rDCYZtXRwgEcZJMz6AWkxE=w300"
-             alt="logo">
+        <h2>Imagen</h2>
+        <img class="rounded" src="https://picsum.photos/200" alt="logo">
+
         <!-- slot con nombre -->
         <template #mensaje>
+            <h2 class="mt-5">Frase</h2>
             <p>{{ frase }}</p>
         </template>
-    </SlotsComponent>
-
-    <MostrarTareas :tareas="listaTareas" titulo="Tareas actuales"/>
-    <AgregarTareas @agregar="agregarTarea"/>
-
+    </SubComponente>
 </template>
 
 <style scoped>
-
 </style>
+

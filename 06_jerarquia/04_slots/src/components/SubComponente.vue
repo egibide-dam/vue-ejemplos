@@ -4,12 +4,12 @@
 <template>
     <main>
         <slot>
-            <!-- aqui se inyecta el codigo html que proviene del padre -->
+            <!-- Aquí se inyecta el código HTML que proviene del padre -->
         </slot>
     </main>
     <footer>
         <slot name="mensaje">
-            <!-- aqui se inyectara el html con el mensaje desde el padre -->
+            <!-- Aquí se inyecta el código HTML con el mensaje desde el padre -->
         </slot>
     </footer>
 </template>
