@@ -1,11 +1,10 @@
 <script setup>
-import { ref } from 'vue'
+import { reactive } from 'vue'
 
 import MostrarTareas from "@/components/MostrarTareas.vue";
 import AgregarTareas from '@/components/AgregarTareas.vue'
-import SlotsComponent from '@/components/SlotsComponent.vue';
 
-const listaTareas = ref([
+const listaTareas = reactive([
     {
         id: 1,
         tarea: 'Ir al supermercado'
@@ -17,35 +16,20 @@ const listaTareas = ref([
 ])
 
 const agregarTarea = (nuevaTarea) => {
-    listaTareas.value.push({
-        id: listaTareas.value.length + 1,
+    listaTareas.push({
+        id: listaTareas.length + 1,
         tarea: nuevaTarea
     })
 }
-
-const frase = 'Muchas cosas por hacer';
-
 </script>
 
 <template>
     <h1>Ejemplo emits</h1>
-
-    <SlotsComponent>
-        <!-- slot sin nombre -->
-        <h1>Gestor de tareas</h1>
-        <img src="https://lh3.ggpht.com/0jPniuR9EOLXUyYMFLlBKr0Jef_1SyHGsPkoLpDoNey1-rDCYZtXRwgEcZJMz6AWkxE=w300"
-             alt="logo">
-        <!-- slot con nombre -->
-        <template #mensaje>
-            <p>{{ frase }}</p>
-        </template>
-    </SlotsComponent>
+    <hr class="mb-5">
 
     <MostrarTareas :tareas="listaTareas" titulo="Tareas actuales"/>
     <AgregarTareas @agregar="agregarTarea"/>
-
 </template>
 
 <style scoped>
-
 </style>
