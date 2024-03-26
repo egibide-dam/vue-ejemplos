@@ -1,9 +1,8 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
 </script>
 
 <template>
-    <main>
-        <TheWelcome/>
-    </main>
+    <h2>Inicio</h2>
+    <hr>
+    <img class="rounded" src="https://picsum.photos/200" alt="Imagen aleatoria">
 </template>
