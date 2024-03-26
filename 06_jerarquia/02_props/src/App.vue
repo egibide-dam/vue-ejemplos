@@ -2,7 +2,6 @@
 import { reactive } from 'vue'
 
 import MostrarTareas from "@/components/MostrarTareas.vue";
-import AgregarTareas from '@/components/AgregarTareas.vue'
 
 const listaTareas = reactive([
     {
@@ -14,13 +13,6 @@ const listaTareas = reactive([
         tarea: 'Bañar al perro'
     }
 ])
-
-const agregarTarea = (nuevaTarea) => {
-    listaTareas.push({
-        id: listaTareas.length + 1,
-        tarea: nuevaTarea
-    })
-}
 </script>
 
 <template>
@@ -28,7 +20,6 @@ const agregarTarea = (nuevaTarea) => {
     <hr class="mb-5">
 
     <MostrarTareas :tareas="listaTareas" titulo="Tareas actuales"/>
-    <AgregarTareas @agregar="agregarTarea"/>
 </template>
 
 <style scoped>
