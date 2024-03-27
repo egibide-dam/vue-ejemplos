@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import { usePostsStore } from '@/stores/PostsStore'
 
 const postsStore = usePostsStore();
@@ -13,24 +13,29 @@ const armarObjeto = () => {
         body: contenido.value
     }
     postsStore.agregarPost(nuevoPost);
+    titulo.value = '';
+    contenido.value = '';
 }
+const completado = computed(() => {
+    return titulo.value.length > 0 && contenido.value.length > 0;
+});
 </script>
 
 <template>
+    <h2>Nuevo post</h2>
     <div class="card">
-        <div class="card-title">
-            <label for="titulo">
-                Título
-                <input v-model='titulo' type="text" placeholder="Soy un titulo">
-            </label>
+        <div class="card-body">
+            <div class="mb-3">
+                <label class="form-label" for="titulo">Título</label>
+                <input class="form-control" id="titulo" type="text" placeholder="Escribe algo..." v-model="titulo"/>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="contenido">Contenido</label>
+                <input class="form-control" id="contenido" type="text" placeholder="Escribe algo..."
+                       v-model="contenido"/>
+            </div>
+            <button class="btn btn-primary" :disabled="!completado" @click='armarObjeto()'>Agregar</button>
         </div>
-        <div class="card-content">
-            <label for="contenido">
-                Contenido:
-                <textarea v-model='contenido' type="text" placeholder="Soy un contenido"/>
-            </label>
-        </div>
-        <button @click='armarObjeto()' class="button">Agregar</button>
     </div>
 </template>
 

@@ -8,8 +8,9 @@ const postsStore = usePostsStore();
 </script>
 
 <template>
-    <PostCard v-for="post in postsStore.posts" :key="post.id" :titulo="post.title" :contenido="post.body"/>
-    <p>Total posteos: {{ postsStore.calcularCantidad }}</p>
+    <h2>Posts</h2>
+    <PostCard class="mb-3" v-for="post in postsStore.posts" :key="post.id" :titulo="post.title" :contenido="post.body"/>
+    <p class="text-secondary">Total: {{ postsStore.calcularCantidad }}</p>
 </template>
 
 <style scoped>
