@@ -5,7 +5,7 @@ import Lipsum from "@/components/Lipsum.vue";
 
 <template>
     <h1>Ejemplo con router</h1>
-    <nav class="navbar navbar-expand bg-body-secondary mb-5">
+    <nav class="navbar navbar-expand bg-body-secondary rounded mb-5">
         <div class="navbar-nav px-3">
             <RouterLink class="nav-link link-primary" to="/">Inicio</RouterLink>
             <div class="vr mx-3"/>
