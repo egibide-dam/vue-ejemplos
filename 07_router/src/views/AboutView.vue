@@ -1,6 +1,5 @@
 <script setup>
 import Lipsum from "@/components/Lipsum.vue";
-import { RouterLink } from "vue-router";
 </script>
 
 <template>
