@@ -7,6 +7,10 @@ const store = usePostStore();
 const titulo = ref('');
 const contenido = ref('');
 
+const completado = computed(() => {
+    return titulo.value.length > 0 && contenido.value.length > 0;
+});
+
 const guardar = () => {
     const nuevoPost = {
         userId: 1,
@@ -18,8 +22,8 @@ const guardar = () => {
     limpiar();
 }
 
-const completado = computed(() => {
-    return titulo.value.length > 0 && contenido.value.length > 0;
+const limpiable = computed(() => {
+    return titulo.value.length > 0 || contenido.value.length > 0;
 });
 
 function limpiar() {
@@ -43,7 +47,7 @@ function limpiar() {
                        v-model="contenido"/>
             </div>
             <button class="btn btn-primary" :disabled="!completado" @click='guardar()'>Guardar</button>
-            <button class="btn btn-link link-dark" :disabled="!completado" @click="limpiar()">Cancelar</button>
+            <button class="btn btn-link link-dark" :disabled="!limpiable" @click="limpiar()">Cancelar</button>
         </div>
     </div>
 </template>
