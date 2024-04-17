@@ -1,6 +1,6 @@
 <script setup>
-import PostsView from '@/components/PostsView.vue';
-import NewPosts from '@/components/NewPosts.vue';
+import PostView from '@/components/PostList.vue';
+import PostNew from '@/components/PostNew.vue';
 </script>
 
 <template>
@@ -9,10 +9,10 @@ import NewPosts from '@/components/NewPosts.vue';
 
     <div class="row">
         <div class="col-8">
-            <PostsView/>
+            <PostView/>
         </div>
         <div class="col-4">
-            <NewPosts/>
+            <PostNew/>
         </div>
     </div>
 </template>
