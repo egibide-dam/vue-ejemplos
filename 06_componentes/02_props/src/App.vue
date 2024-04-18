@@ -6,11 +6,11 @@ import MostrarTareas from "@/components/MostrarTareas.vue";
 const listaTareas = reactive([
     {
         id: 1,
-        tarea: 'Ir al supermercado'
+        texto: 'Ir al supermercado'
     },
     {
         id: 2,
-        tarea: 'Bañar al perro'
+        texto: 'Bañar al perro'
     }
 ])
 </script>
