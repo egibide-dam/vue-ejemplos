@@ -7,18 +7,18 @@ import AgregarTareas from '@/components/AgregarTareas.vue'
 const listaTareas = reactive([
     {
         id: 1,
-        tarea: 'Ir al supermercado'
+        texto: 'Ir al supermercado'
     },
     {
         id: 2,
-        tarea: 'Bañar al perro'
+        texto: 'Bañar al perro'
     }
 ])
 
 const agregarTarea = (nuevaTarea) => {
     listaTareas.push({
         id: listaTareas.length + 1,
-        tarea: nuevaTarea
+        texto: nuevaTarea
     })
 }
 </script>
