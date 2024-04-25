@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import { ref, computed } from 'vue';
+import { computed, ref } from 'vue';
 import datos from '@/data/posts.json';
 
 export const usePostStore = defineStore('PostStore', () => {
@@ -14,5 +14,5 @@ export const usePostStore = defineStore('PostStore', () => {
         localStorage.setItem('posts', JSON.stringify(posts.value));
     }
 
-    return {posts, numPosts, siguienteId, agregar}
+    return { posts, numPosts, siguienteId, agregar }
 })
